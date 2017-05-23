@@ -1,5 +1,10 @@
 apt-get install mysql-server openvpn easy-rsa
 
+MYSQL_ROOT_PASS="openvpn"
+# create database, add default user and password
+mysql -uROOT -p$MYSQL_ROOT_PASS -e "CREATE DATABASE openvpn; GRANT ALL ON openvpn.* TO 'USERNAME'@\"%\" IDENTIFIED BY 'PASSWORD';"
+cat openvpn.sql | mysql -uUSERNAME -pPASSWORD openvpn
+
 # mysql .sh scripts and udp and tcp openvpn server configurations
 cp -R script /etc/openvpn/
 cp *.conf /etc/openvpn/
@@ -23,6 +28,4 @@ touch /etc/openvpn/log/udp_53.log
 chmod -R 755 /etc/openvpn
 
 /etc/openvpn/script/test_connect_db.sh test 1234
-
-# share internet to client
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ##Dababase Server
-HOST='2.2.2.2'
+HOST='127.0.0.1'
 #Default port = 3306
 PORT='3306'
 #Username

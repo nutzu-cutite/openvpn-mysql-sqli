@@ -26,13 +26,33 @@ PRIMARY KEY (`log_id`),
 KEY `user_id` (`user_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+# test user, disabled
 INSERT INTO `user` (
     `user_id`, `user_pass`, `user_mail`, `user_phone`,
     `user_online`, `user_enable`, `user_start_date`, `user_end_date`
 )
 VALUES (
-    'test', '1234', 'mr.tumcpe@gmail.com',
+    'test', '1234', 'test@some-company.ro',
+    '+66815447514', 0, 0, '2012-01-01', '0000-00-00'
+);
+
+# admin user
+INSERT INTO `user` (
+    `user_id`, `user_pass`, `user_mail`, `user_phone`,
+    `user_online`, `user_enable`, `user_start_date`, `user_end_date`
+)
+VALUES (
+    'admin', 'strong1337password', 'admin@some-company.ro',
     '+66815447514', 0, 1, '2012-01-01', '0000-00-00'
 );
 
+# cosmin, the douchebag user
+INSERT INTO `user` (
+    `user_id`, `user_pass`, `user_mail`, `user_phone`,
+    `user_online`, `user_enable`, `user_start_date`, `user_end_date`
+)
+VALUES (
+    'cosmin', 'evilguy', 'cosmin@some-company.ro',
+    '+66815447514', 0, 1, '2012-01-01', '0000-00-00'
+);
 
